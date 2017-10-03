@@ -74,10 +74,10 @@ void append (struct Node** head_ref,int new_data){//
 //---------------------------------------------------//
 
 ////PARAMETRE OLARAK VERILEN SAYIYI ICEREN DUGUMU SILER//////
-void deleteNode(struct Node* head_ref,int key){
-	struct Node* temp=head_ref,*prew;//temp headle aynı yeri,prew ise su an bir yeri gostermiyor
+void deleteNode(struct Node** head_ref,int key){
+	struct Node* temp=*head_ref,*prew;//temp headle aynı yeri,prew ise su an bir yeri gostermiyor
 	if(temp!=NULL&&temp->data==key){ //temp yani head null degilse ve aradigimiz elemani bulduysak 
-		head_ref=temp->next;//head'i headden sonraki dugum yap
+		*head_ref=temp->next;//head'i headden sonraki dugum yap
 		free(temp);//eski head'i sil
 		return;
 	}
@@ -177,7 +177,7 @@ int main(){
 
 	append(&head,66);// listenin sonuna ekleme yapilir
 	goster(head);
-	deleteNode(head,6);//listedeki 6 sayisi silinir.
+	deleteNode(&head,8);//listedeki 6 sayisi silinir.
 	goster(head);
 	printf(" boyutu : %d\n",getCount(head));// listedeki dugum sayisi bulunur
 	deleteRotate(&head,3);// listenin 3. sirasindaki dugum silinir
