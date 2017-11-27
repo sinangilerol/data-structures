@@ -19,15 +19,7 @@ int main(){
 	root->left=newNode(3);
 	root->right=newNode(4);
 	root->left->left=newNode(5);
-	/*
-	
-			1
-		  /  \
-		3	  4
-	   /
-	  5	
-		
-	*/
+
 	
 	return 0;
 }

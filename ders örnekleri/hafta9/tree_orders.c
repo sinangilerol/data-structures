@@ -47,15 +47,7 @@ int main(){
 	root->left->right=newNode(60);
 	root->right->left=newNode(75);
 	root->right->right=newNode(80);
-	/*______________________________________
-											|		
-					30						|
-				 /		 \					|
-			  50	 	  70				|
-			/   \       /    \				|
-		  55	60	  75     80				|
-											|
-	________________________________________*/
+
 	printf(" pastorder: ");
 	pastOrder(root);
 	printf("\n inorder: ");
